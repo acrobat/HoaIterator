@@ -93,7 +93,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  \Iterator
      */
-    public function getInnerIterator(): ?\Iterator
+    public function getInnerIterator()
     {
         return $this->_iterator;
     }
@@ -103,7 +103,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function current(): mixed
+    public function current()
     {
         return $this->_current;
     }
@@ -113,7 +113,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function key(): mixed
+    public function key()
     {
         return $this->_key;
     }
@@ -123,7 +123,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function next(): void
+    public function next()
     {
         $innerIterator = $this->getInnerIterator();
         $this->_valid  = $innerIterator->valid();
@@ -134,6 +134,8 @@ class Lookahead extends IteratorIterator implements Outer
 
         $this->_key     = $innerIterator->key();
         $this->_current = $innerIterator->current();
+
+        return $innerIterator->next();
     }
 
     /**
@@ -141,10 +143,12 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function rewind(): void
+    public function rewind()
     {
-        $this->getInnerIterator()->rewind();
+        $out = $this->getInnerIterator()->rewind();
         $this->next();
+
+        return $out;
     }
 
     /**
@@ -152,7 +156,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  bool
      */
-    public function valid(): bool
+    public function valid()
     {
         return $this->_valid;
     }

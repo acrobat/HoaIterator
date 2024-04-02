@@ -103,7 +103,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  \Iterator
      */
-    public function getInnerIterator(): ?\Iterator
+    public function getInnerIterator()
     {
         return $this->_iterator;
     }
@@ -133,7 +133,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function current(): mixed
+    public function current()
     {
         return $this->getBuffer()->current()[self::BUFFER_VALUE];
     }
@@ -143,7 +143,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function key(): mixed
+    public function key()
     {
         return $this->getBuffer()->current()[self::BUFFER_KEY];
     }
@@ -153,7 +153,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function next(): void
+    public function next()
     {
         $innerIterator = $this->getInnerIterator();
         $buffer        = $this->getBuffer();
@@ -204,7 +204,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function rewind(): void
+    public function rewind()
     {
         $innerIterator = $this->getInnerIterator();
         $buffer        = $this->getBuffer();
@@ -228,7 +228,7 @@ class Buffer extends IteratorIterator implements Outer
      *
      * @return  bool
      */
-    public function valid(): bool
+    public function valid()
     {
         return
             $this->getBuffer()->valid() &&
