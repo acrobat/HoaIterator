@@ -86,7 +86,7 @@ class CallbackGenerator implements Iterator
      *
      * @return  mixed
      */
-    public function current()
+    public function current(): mixed
     {
         $handle = $this->_callback;
 
@@ -98,7 +98,7 @@ class CallbackGenerator implements Iterator
      *
      * @return  mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->_key;
     }
@@ -108,7 +108,7 @@ class CallbackGenerator implements Iterator
      *
      * @return  void
      */
-    public function next()
+    public function next(): void
     {
         ++$this->_key;
 
@@ -120,7 +120,7 @@ class CallbackGenerator implements Iterator
      *
      * @return  void
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->_key     = 0;
         $this->_current = null;
@@ -133,7 +133,7 @@ class CallbackGenerator implements Iterator
      *
      * @return  bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return true;
     }

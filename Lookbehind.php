@@ -116,12 +116,12 @@ class Lookbehind extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function next()
+    public function next(): void
     {
         $this->_previousKey     = $this->key();
         $this->_previousCurrent = $this->current();
 
-        return $this->getInnerIterator()->next();
+        $this->getInnerIterator()->next();
     }
 
     /**
@@ -129,12 +129,12 @@ class Lookbehind extends IteratorIterator implements Outer
      *
      * @return  void
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->_previousKey     = -1;
         $this->_previousCurrent = null;
 
-        return $this->getInnerIterator()->rewind();
+        $this->getInnerIterator()->rewind();
     }
 
     /**
@@ -142,7 +142,7 @@ class Lookbehind extends IteratorIterator implements Outer
      *
      * @return  bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->getInnerIterator()->valid();
     }
