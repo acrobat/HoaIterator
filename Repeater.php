@@ -110,7 +110,7 @@ class Repeater implements Iterator
      *
      * @return  mixed
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->_iterator->current();
     }
@@ -120,7 +120,7 @@ class Repeater implements Iterator
      *
      * @return  mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->_iterator->key();
     }
@@ -130,9 +130,9 @@ class Repeater implements Iterator
      *
      * @return  void
      */
-    public function next()
+    public function next(): void
     {
-        return $this->_iterator->next();
+        $this->_iterator->next();
     }
 
     /**
@@ -140,9 +140,9 @@ class Repeater implements Iterator
      *
      * @return  void
      */
-    public function rewind()
+    public function rewind(): void
     {
-        return $this->_iterator->rewind();
+        $this->_iterator->rewind();
     }
 
     /**
@@ -150,7 +150,7 @@ class Repeater implements Iterator
      *
      * @return  bool
      */
-    public function valid()
+    public function valid(): bool
     {
         $valid = $this->_iterator->valid();
 

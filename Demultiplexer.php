@@ -94,7 +94,7 @@ class Demultiplexer implements Iterator
      *
      * @return  mixed
      */
-    public function current()
+    public function current(): mixed
     {
         if (null !== $this->_current) {
             return $this->_current;
@@ -110,7 +110,7 @@ class Demultiplexer implements Iterator
      *
      * @return  mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->_iterator->key();
     }
@@ -120,11 +120,11 @@ class Demultiplexer implements Iterator
      *
      * @return  void
      */
-    public function next()
+    public function next(): void
     {
         $this->_current = null;
 
-        return $this->_iterator->next();
+        $this->_iterator->next();
     }
 
     /**
@@ -132,9 +132,9 @@ class Demultiplexer implements Iterator
      *
      * @return  void
      */
-    public function rewind()
+    public function rewind(): void
     {
-        return $this->_iterator->rewind();
+        $this->_iterator->rewind();
     }
 
     /**
@@ -142,7 +142,7 @@ class Demultiplexer implements Iterator
      *
      * @return  bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->_iterator->valid();
     }

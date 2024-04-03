@@ -115,7 +115,7 @@ class Counter implements Iterator
      *
      * @return  int
      */
-    public function current()
+    public function current(): int
     {
         return $this->_i;
     }
@@ -125,7 +125,7 @@ class Counter implements Iterator
      *
      * @return  int
      */
-    public function key()
+    public function key(): int
     {
         return $this->_key;
     }
@@ -135,12 +135,10 @@ class Counter implements Iterator
      *
      * @return  void
      */
-    public function next()
+    public function next(): void
     {
         ++$this->_key;
         $this->_i += $this->_step;
-
-        return;
     }
 
     /**
@@ -148,12 +146,10 @@ class Counter implements Iterator
      *
      * @return  void
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->_key = 0;
         $this->_i   = $this->_from;
-
-        return;
     }
 
     /**
@@ -161,7 +157,7 @@ class Counter implements Iterator
      *
      * @return  bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->_i < $this->_to;
     }

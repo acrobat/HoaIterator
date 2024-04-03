@@ -96,7 +96,7 @@ class Lookbehind extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->getInnerIterator()->current();
     }
@@ -106,7 +106,7 @@ class Lookbehind extends IteratorIterator implements Outer
      *
      * @return  mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->getInnerIterator()->key();
     }
