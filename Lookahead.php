@@ -93,7 +93,7 @@ class Lookahead extends IteratorIterator implements Outer
      *
      * @return  \Iterator
      */
-    public function getInnerIterator()
+    public function getInnerIterator(): ?\Iterator
     {
         return $this->_iterator;
     }
